@@ -20,11 +20,6 @@ This repo contains a comprehensive collection of questions and answers covering 
 ## 📚 Table of Contents
 
 - [Introduction](#introduction)
-- [Features](#features)
-- [Topics Covered](#topics-covered)
-- [How to Use](#how-to-use)
-- [Contributing](#contributing)
-- [License](#license)
 
 ---
 
@@ -216,7 +211,7 @@ Whether you're a **beginner** or an **experienced developer**, this resource wil
 I welcome contributions!  
 Feel free to fork the repo, create a new branch, and submit a pull request.  
 
-Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+Please see [Contributing.md](Contributing.md) for guidelines.
 
 ---
 
