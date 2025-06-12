@@ -43,6 +43,8 @@ Whether you're a **beginner** or an **experienced developer**, this resource wil
 
 - Spring Core
 
+---
+
 ### Top 50 Spring Core Interview Questions & Answers (SWE 2 Level)
 
 1. **Explain the difference between constructor and setter injection. When would you use each?**  
@@ -195,6 +197,229 @@ Whether you're a **beginner** or an **experienced developer**, this resource wil
 50. **How do you programmatically register a bean at runtime?**  
     Use `ConfigurableApplicationContext#getBeanFactory().registerSingleton()`.
 
+---
+
+## 🌿 Spring Data JPA Interview Questions & Answers
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Spring%20Data%20JPA-Interview%20Questions-6DB33F?style=for-the-badge&logo=spring&logoColor=white"/>
+</p>
+
+### 🟢 Level: Easy
+
+1. **What is Spring Data JPA?**  
+   Spring Data JPA is a Spring project that simplifies data access using JPA by providing repository abstractions and reducing boilerplate code.
+
+2. **What is the purpose of the `@Entity` annotation in JPA?**  
+   It marks a class as a JPA entity, mapping it to a database table.
+
+3. **What is an EntityManager in JPA?**  
+   The primary interface for interacting with the persistence context and managing entity lifecycle operations.
+
+4. **What is the role of the `@Id` annotation in JPA?**  
+   It marks a field as the primary key of the entity.
+
+5. **How do you define a primary key in a JPA entity?**  
+   Annotate a field with `@Id` (optionally with `@GeneratedValue`).
+
+6. **What is the difference between `findById` and `getOne` methods in JPA?**  
+   `findById` fetches the entity immediately; `getOne` returns a proxy and fetches lazily.
+
+7. **What is the purpose of the `@Table` annotation in JPA?**  
+   It specifies the table name and other table-level details for the entity.
+
+8. **Explain the difference between `@Column` and `@JoinColumn`.**  
+   `@Column` maps a field to a table column; `@JoinColumn` specifies the foreign key column for associations.
+
+9. **What is the role of the `@GeneratedValue` annotation in JPA?**  
+   It defines how the primary key is generated (auto, sequence, identity, table).
+
+10. **What is the default fetch type for `@OneToMany` and `@ManyToOne` relationships in JPA?**  
+    `@OneToMany` is LAZY by default; `@ManyToOne` is EAGER by default.
+
+11. **How do you define a one-to-many relationship in JPA?**  
+    Use `@OneToMany` on the parent entity and `@ManyToOne` on the child.
+
+12. **What is a repository in Spring Data JPA?**  
+    An interface extending `JpaRepository` or `CrudRepository` to provide CRUD operations.
+
+13. **What is the purpose of the `@Repository` annotation in Spring Data JPA?**  
+    It marks a class as a repository bean and enables exception translation.
+
+14. **How do you create a custom query in Spring Data JPA?**  
+    Use the `@Query` annotation on repository methods.
+
+15. **What is the purpose of the `@Query` annotation in Spring Data JPA?**  
+    It allows you to define JPQL or native SQL queries for repository methods.
+
+16. **What is JPQL?**  
+    Java Persistence Query Language, an object-oriented query language for JPA entities.
+
+17. **What is the difference between JPQL and SQL?**  
+    JPQL operates on entity objects and their properties; SQL operates on database tables and columns.
+
+18. **What is the purpose of the `@Modifying` annotation in Spring Data JPA?**  
+    It marks a query method as modifying data (insert, update, delete).
+
+19. **How do you handle transactions in Spring Data JPA?**  
+    By using the `@Transactional` annotation at the service or repository layer.
+
+20. **What is the `@Transactional` annotation used for in Spring Data JPA?**  
+    It defines the scope of a single database transaction.
+
+21. **How do you paginate results in Spring Data JPA?**  
+    By passing a `Pageable` parameter to repository methods.
+
+22. **What is the `Pageable` interface in Spring Data JPA?**  
+    It provides pagination information (page number, size, sort).
+
+23. **What is the `Page` interface in Spring Data JPA?**  
+    It represents a page of results and provides metadata like total pages and elements.
+
+24. **How do you sort results in Spring Data JPA?**  
+    By passing a `Sort` or `Pageable` parameter to repository methods.
+
+25. **What is a derived query method in Spring Data JPA?**  
+    A method whose name defines the query (e.g., `findByUsername`).
+
+26. **What is the purpose of the `@NamedQuery` annotation in JPA?**  
+    It defines a static, named JPQL query at the entity level.
+
+27. **What is an entity lifecycle in JPA?**  
+    The stages an entity goes through: new, managed, detached, removed.
+
+28. **What are the different states of an entity in JPA?**  
+    New (transient), Managed (persistent), Detached, Removed.
+
+29. **What is the purpose of the `@PrePersist` annotation in JPA?**  
+    Marks a method to be called before an entity is persisted.
+
+30. **What is the purpose of the `@PostPersist` annotation in JPA?**  
+    Marks a method to be called after an entity is persisted.
+
+31. **What is the purpose of the `@PreUpdate` annotation in JPA?**  
+    Marks a method to be called before an entity is updated.
+
+32. **What is the purpose of the `@PostUpdate` annotation in JPA?**  
+    Marks a method to be called after an entity is updated.
+
+33. **What is the purpose of the `@PreRemove` annotation in JPA?**  
+    Marks a method to be called before an entity is removed.
+
+34. **What is the purpose of the `@PostRemove` annotation in JPA?**  
+    Marks a method to be called after an entity is removed.
+
+35. **What is the purpose of the `@PostLoad` annotation in JPA?**  
+    Marks a method to be called after an entity is loaded from the database.
+
+---
+
+### 🟡 Level: Medium
+
+36. **Explain the concept of entity graph in JPA and how it can be used to optimize performance.**  
+    Entity graphs allow you to specify which attributes and relationships should be eagerly fetched, reducing the N+1 select problem and optimizing performance.
+
+37. **How do you handle dynamic queries in Spring Data JPA?**  
+    By using the `Specification` interface or the JPA Criteria API to build queries programmatically.
+
+38. **What is the role of the Criteria API in JPA?**  
+    It enables the creation of type-safe, dynamic queries in a programmatic way.
+
+39. **How do you use the Criteria API to create dynamic queries in JPA?**  
+    By building queries using `CriteriaBuilder`, `CriteriaQuery`, and predicates to compose flexible queries at runtime.
+
+40. **What is the purpose of the Specification interface in Spring Data JPA?**  
+    It allows you to encapsulate and reuse query logic as composable specifications.
+
+41. **How do you use the Specification interface to create dynamic queries in JPA?**  
+    Implement `Specification<T>` and combine multiple specifications using `and()`, `or()`.
+
+42. **What is the purpose of the @Cacheable annotation in JPA?**  
+    It marks an entity as eligible for second-level caching for better performance.
+
+43. **How do you configure second-level cache in JPA?**  
+    By enabling a cache provider (like Ehcache, Hazelcast) and configuring JPA properties.
+
+44. **What is the difference between first-level and second-level cache in JPA?**  
+    First-level cache is per `EntityManager` (transactional); second-level cache is shared across sessions.
+
+45. **Explain the concept of dirty checking in JPA and how it works.**  
+    JPA automatically tracks changes to managed entities and synchronizes them with the database during flush/commit.
+
+46. **Explain the concept of cascade types in JPA and how they affect entity relationships.**  
+    Cascade types determine how operations (persist, merge, remove, etc.) propagate from parent to child entities.
+
+47. **What are the different cascade types available in JPA and when would you use each?**  
+    `PERSIST`, `MERGE`, `REMOVE`, `REFRESH`, `DETACH`, `ALL`—used to control which operations affect related entities.
+
+48. **How do you handle orphan removal in JPA and what is the purpose of the @OneToMany(orphanRemoval = true) annotation?**  
+    Orphan removal automatically deletes child entities removed from their parent collection.
+
+49. **What are the different types of entity graphs (attribute node, subgraph) in JPA and how are they used?**  
+    Attribute nodes specify fields to fetch; subgraphs allow nested fetches for complex relationships.
+
+50. **How do you optimize performance using Fetch Joins in JPQL?**  
+    Use `JOIN FETCH` in JPQL queries to load related entities in a single query and avoid N+1 selects.
+
+51. **What is the N+1 select problem in JPA and how can it be mitigated?**  
+    It happens when fetching collections lazily, causing extra queries. Mitigate using fetch joins or batch fetching.
+
+52. **Explain the purpose of the @EntityListeners annotation and how it is used in auditing.**  
+    It registers callback listeners for entity lifecycle events, useful for automatic auditing.
+
+53. **How do you handle multi-tenancy in JPA and what are the different strategies available?**  
+    Use separate schemas, databases, or discriminator columns to isolate tenant data.
+
+54. **How do you configure and use the @SequenceGenerator and @TableGenerator annotations in JPA?**  
+    Use `@SequenceGenerator` for sequence-based keys and `@TableGenerator` for table-based keys by configuring them on the entity.
+
+55. **What is the purpose of the @Converter annotation in JPA and how do you use it to create custom converters?**  
+    It marks a class as a converter to map custom Java types to database columns and vice versa.
+
+56. **How do you handle database migrations in a Spring Data JPA application?**  
+    By using tools like Flyway or Liquibase to manage schema changes.
+
+57. **What are the key considerations when implementing a custom repository in Spring Data JPA?**  
+    Define a custom interface, implement it, and link it to your repository interface for advanced queries.
+
+58. **How do you manage database connection pooling in a Spring Data JPA application?**  
+    Configure a connection pool (e.g., HikariCP) in your datasource configuration.
+
+59. **What is the role of the @SecondaryTable annotation in JPA and how do you use it to map an entity to multiple tables?**  
+    It allows mapping fields of an entity to columns in a secondary table, enabling normalization.
+
+60. **Explain the concept of Entity Detachment in JPA and how it affects the persistence context.**  
+    Detached entities are no longer tracked by the persistence context; changes are not automatically persisted.
+
+61. **How do you implement soft deletes in a Spring Data JPA application?**  
+    Add a boolean or status field (e.g., `deleted`) and filter queries to exclude soft-deleted records.
+
+62. **What are the pros and cons of using EntityManager directly versus using Spring Data JPA repositories?**  
+    EntityManager offers more flexibility and control; repositories are simpler and less error-prone for standard operations.
+
+63. **How do you handle hierarchical data structures (e.g., trees, graphs) in JPA?**  
+    Use self-referencing relationships and recursive queries or custom logic.
+
+64. **Explain the concept of database sharding and how it can be implemented in a Spring Data JPA application.**  
+    Sharding splits data across databases; implement with custom routing and multiple datasources.
+
+65. **What are the best practices for managing entity relationships and avoiding circular dependencies in JPA?**  
+    Use bidirectional mappings carefully, avoid unnecessary relationships, and use DTOs for complex graphs.
+
+66. **How do you handle large data sets and pagination efficiently in a Spring Data JPA application?**  
+    Use pagination (`Pageable`), streaming, and batch processing to reduce memory usage.
+
+67. **Explain the different types of joins (inner, outer, cross) in JPQL and provide examples of when to use each.**  
+    INNER JOIN (matching rows), LEFT/RIGHT OUTER JOIN (all from one side), CROSS JOIN (cartesian product).
+
+68. **How do you handle custom exception handling and error codes in a Spring Data JPA application?**  
+    Use `@ControllerAdvice` and custom exception classes for consistent error handling.
+
+69. **What are the key differences between Hibernate and other JPA implementations like EclipseLink?**  
+    Differences include performance, caching, vendor-specific features, and community support.
+
+70. **How do you integrate Spring Data JPA with other Spring projects like Spring Batch or Spring Integration?**  
+    Inject repositories into batch jobs or integration flows for seamless data access.
 
 ---
 
