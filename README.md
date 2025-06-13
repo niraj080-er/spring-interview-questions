@@ -17,12 +17,6 @@ This repo contains a comprehensive collection of questions and answers covering 
 
 ---
 
-## 📚 Table of Contents
-
-- [Introduction](#introduction)
-
----
-
 ## 📝 Introduction
 
 This repository aims to help you prepare for Spring Framework interviews by providing a curated list of commonly asked questions along with detailed answers.  
@@ -44,6 +38,12 @@ Whether you're a **beginner** or an **experienced developer**, this resource wil
 - Spring Core
 
 ---
+
+## 🌱 Spring Core Interview Questions & Answers
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Spring%20Core-Interview%20Questions-6DB33F?style=for-the-badge&logo=spring&logoColor=white"/>
+</p>
 
 ### Top 50 Spring Core Interview Questions & Answers (SWE 2 Level)
 
@@ -423,21 +423,253 @@ Whether you're a **beginner** or an **experienced developer**, this resource wil
 
 ---
 
+## 🌱 Spring AOP Interview Questions & Answers
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Spring%20AOP-Interview%20Questions-6DB33F?style=for-the-badge&logo=spring&logoColor=white"/>
+</p>
+
+### 🟢 Level: Easy
+
+1. **What does AOP stand for in Spring?**  
+   Aspect-Oriented Programming. It allows separation of cross-cutting concerns (like logging, security) from business logic.
+
+2. **What are the key concepts of AOP?**  
+   Aspect, Join Point, Advice, Pointcut, Introduction, Target Object, Weaving, Proxy.
+
+3. **What is a cross-cutting concern? Can you give an example?**  
+   A functionality that affects multiple parts of an application, e.g., logging, security, or transaction management.
+
+4. **What is a join point?**  
+   A point during execution of a program, such as method execution or exception handling, where an aspect can be applied.
+
+5. **What is a pointcut?**  
+   An expression that matches join points, specifying where advice should be applied.
+
+6. **What is an advice?**  
+   Action taken by an aspect at a particular join point, e.g., before, after, or around method execution.
+
+7. **What are the different types of advice in Spring AOP?**  
+   `@Before`, `@After`, `@AfterReturning`, `@AfterThrowing`, `@Around`.
+
+8. **What is an aspect?**  
+   A module that encapsulates pointcuts and advice, representing a cross-cutting concern.
+
+9. **How do you define an aspect in Spring AOP?**  
+   Annotate a class with `@Aspect` and define advice methods.
+
+10. **What is a proxy in Spring AOP?**  
+    An object created by the AOP framework to implement aspect logic by wrapping the target object.
+
+11. **What is weaving in the context of AOP?**  
+    The process of linking aspects with other application types or objects to create an advised object.
+
+12. **What is the difference between Spring AOP and AspectJ?**  
+    Spring AOP is proxy-based and works at runtime; AspectJ is more powerful, supports compile-time and load-time weaving.
+
+13. **How do you enable AOP in a Spring application?**  
+    Use `@EnableAspectJAutoProxy` annotation or `<aop:aspectj-autoproxy/>` in XML config.
+
+14. **What is @Aspect annotation used for?**  
+    To declare a class as an aspect.
+
+15. **What is @Pointcut annotation used for?**  
+    To define reusable pointcut expressions.
+
+16. **What is the use of @Before annotation?**  
+    To execute advice before a matched method executes.
+
+17. **What is the use of @After annotation?**  
+    To execute advice after a matched method executes (regardless of outcome).
+
+18. **What is the use of @AfterReturning annotation?**  
+    To execute advice after a matched method returns successfully.
+
+19. **What is the use of @AfterThrowing annotation?**  
+    To execute advice after a matched method throws an exception.
+
+20. **What is the use of @Around annotation?**  
+    To execute advice before and after a matched method, and control method execution.
+
+21. **How do you define a pointcut expression?**  
+    Using AspectJ expression language, e.g., `execution(* com.example.service.*.*(..))`.
+
+22. **What is the purpose of JoinPoint interface in Spring AOP?**  
+    Provides reflective access to the current join point (method, arguments, etc).
+
+23. **Can you use Spring AOP with Spring Boot?**  
+    Yes, just add AOP dependencies and use `@Aspect` and `@EnableAspectJAutoProxy`.
+
+24. **How would you exclude a method from being advised?**  
+    Refine the pointcut expression to exclude the method, or use `@Profile` or custom conditions.
+
+25. **What are the limitations of Spring AOP?**  
+    Only method execution join points, proxy-based (no field or constructor join points), works only with Spring-managed beans.
+
+---
+
+### 🟡 Level: Medium
+
+26. **How does Spring AOP work internally?**  
+    It creates proxies (JDK dynamic proxies or CGLIB) around beans and applies advice at runtime.
+
+27. **What is the difference between static and dynamic weaving?**  
+    Static weaving happens at compile-time; dynamic weaving happens at runtime.
+
+28. **What is the difference between compile-time and load-time weaving?**  
+    Compile-time weaving weaves aspects during compilation; load-time weaving weaves aspects when classes are loaded.
+
+29. **How do you implement a custom annotation for AOP?**  
+    Create a custom annotation and use it in a pointcut expression.
+
+30. **How can you control the order of multiple aspects?**  
+    Use `@Order` annotation or implement `Ordered` interface.
+
+31. **How do you pass parameters to advice methods?**  
+    Use pointcut expressions with arguments and bind them in advice parameters.
+
+32. **Can you access the return value in @AfterReturning advice?**  
+    Yes, by specifying a `returning` attribute and a parameter in the advice method.
+
+33. **What is the use of ProceedingJoinPoint in @Around advice?**  
+    It allows you to control method execution and access arguments/return values.
+
+34. **How do you handle exceptions in AOP?**  
+    Use `@AfterThrowing` advice or handle exceptions in `@Around` advice.
+
+35. **How can you apply AOP to specific beans?**  
+    Use pointcut expressions that match only those beans or methods.
+
+36. **How do you define multiple pointcuts in a single aspect?**  
+    Define multiple `@Pointcut` methods and reference them in advice.
+
+37. **Can you use AOP with non-Spring managed beans?**  
+    Not with Spring AOP; use AspectJ for non-Spring beans.
+
+38. **What is the use of @DeclareParents annotation?**  
+    To introduce new interfaces to existing classes (introduction/advice).
+
+39. **How do you test AOP functionality?**  
+    Write unit/integration tests and verify advice execution using mocks or logs.
+
+40. **Can you use AOP to modify method arguments?**  
+    Yes, in `@Around` advice by changing arguments before proceeding.
+
+41. **How can you measure method execution time using AOP?**  
+    Use `@Around` advice to record start/end time and calculate duration.
+
+42. **How do you disable AOP for a specific environment?**  
+    Use profiles, conditional beans, or exclude aspect beans in certain configs.
+
+43. **How do you combine multiple pointcut expressions?**  
+    Use logical operators (`&&`, `||`, `!`) in pointcut expressions.
+
+44. **What is the use of @EnableAspectJAutoProxy annotation?**  
+    Enables support for handling components marked with `@Aspect`.
+
+45. **How do you apply AOP to private methods?**  
+    Spring AOP cannot advise private methods; only public/protected methods.
+
+46. **How do you use AOP to manage transactions?**  
+    Use `@Transactional` annotation, which is implemented using AOP.
+
+47. **What is the difference between @Aspect and @Component annotations?**  
+    `@Aspect` marks a class as an aspect; `@Component` makes it a Spring bean. Both are needed for auto-detection.
+
+48. **How do you implement a logging aspect?**  
+    Create an `@Aspect` class with advice that logs method calls.
+
+49. **How do you use AOP to handle security concerns?**  
+    Use aspects to check permissions before method execution.
+
+50. **How do you use AOP to handle caching?**  
+    Use aspects to cache method results or invalidate cache on updates.
+
+---
+
+### 🔴 Level: Hard
+
+51. **How does Spring AOP integrate with AspectJ?**  
+    Spring can use AspectJ aspects and weaving for more advanced features.
+
+52. **What are AspectJ annotations and how are they different from Spring AOP annotations?**  
+    AspectJ annotations (`@Aspect`, `@Pointcut`, etc.) are used for both Spring AOP and AspectJ; AspectJ supports more join points and weaving types.
+
+53. **How do you perform load-time weaving with AspectJ in a Spring application?**  
+    Configure a load-time weaver in Spring and use AspectJ agent.
+
+54. **What is the @AspectJ style of declaring aspects?**  
+    Using Java annotations to declare aspects, pointcuts, and advice.
+
+55. **How do you use @Configurable annotation in AspectJ?**  
+    To enable dependency injection into non-Spring managed objects via AspectJ weaving.
+
+56. **How do you implement aspect precedence in AspectJ?**  
+    Use `@Order` annotation or `declare precedence` in AspectJ.
+
+57. **How do you use @DeclareError and @DeclareWarning annotations in AspectJ?**  
+    To declare compile-time errors or warnings for matched join points.
+
+58. **How do you use AOP with asynchronous methods?**  
+    Apply aspects to methods annotated with `@Async` or use pointcuts matching async methods.
+
+59. **How do you use AOP to implement a retry mechanism?**  
+    Use `@Around` advice to catch exceptions and retry method execution.
+
+60. **How do you manage circular dependencies in AOP?**  
+    Refactor aspects or use setter injection to break cycles.
+
+61. **How do you use AOP to enforce coding standards?**  
+    Use aspects to check method signatures or usage patterns.
+
+62. **How do you use AOP for monitoring and profiling?**  
+    Use `@Around` advice to collect metrics and log performance data.
+
+63. **How do you use AOP to implement a feature toggle?**  
+    Use aspects to enable/disable features based on configuration.
+
+64. **How do you use AOP to implement a rate limiter?**  
+    Use `@Around` advice to check and enforce rate limits before proceeding.
+
+65. **How do you use AOP to implement a circuit breaker?**  
+    Use aspects to track failures and short-circuit method calls when thresholds are reached.
+
+66. **How do you use AOP to implement dependency injection?**  
+    With AspectJ and `@Configurable`, inject dependencies into non-Spring objects.
+
+67. **What is the use of @AspectJAutoProxyCreator?**  
+    It is an internal Spring bean that creates proxies for beans annotated with `@Aspect`.
+
+68. **How do you create a custom pointcut expression?**  
+    Define a method with `@Pointcut` and use custom AspectJ expressions.
+
+69. **How do you handle concurrency issues in AOP?**  
+    Use synchronization in advice or leverage thread-safe data structures.
+
+70. **How do you use AOP for dynamic proxy creation?**  
+    Use Spring's ProxyFactory or programmatically create proxies for beans.
+
+71. **How do you use AOP to handle resource management?**  
+    Use advice to acquire/release resources before/after method execution.
+
+72. **How do you use AOP to implement data validation?**  
+    Use aspects to validate method arguments before proceeding.
+
+73. **How do you use AOP to handle method chaining?**  
+    Use `@Around` advice to intercept and chain method calls as needed.
+
+74. **How do you optimize AOP performance?**  
+    Minimize pointcut scope, avoid unnecessary advice, and use compile-time weaving if needed.
+
+75. **How do you debug AOP issues in a Spring application?**  
+    Enable AOP logging, use breakpoints in advice, and check proxy creation.
+
+---
+
+
+
 ## 🚀 How to Use
 
 1. **Browse Questions:** Go through the list of questions and answers.
 2. **Practice:** Try to answer questions yourself before reading the answers.
 3. **Contribute:** Add your own questions or improve existing ones!
-
----
-
-## 🤝 Contributing
-
-I welcome contributions!  
-Feel free to fork the repo, create a new branch, and submit a pull request.  
-
-Please see [Contributing.md](Contributing.md) for guidelines.
-
----
-
-> ⭐️ **Star this repository to keep it on your radar and help others discover it!**
