@@ -666,7 +666,99 @@ Whether you're a **beginner** or an **experienced developer**, this resource wil
 
 ---
 
+## 🌸 Spring MVC Interview Questions & Answers
 
+1. **What is Spring MVC?**  
+   Spring MVC is a web framework built on the Servlet API that follows the Model-View-Controller design pattern, separating application logic, UI, and input control.
+
+2. **Explain the DispatcherServlet’s role in Spring MVC.**  
+   DispatcherServlet is the front controller that receives all HTTP requests, delegates them to appropriate handlers, and returns the response.
+
+3. **What is a Controller in Spring MVC?**  
+   A Controller is a class annotated with `@Controller` that handles web requests and returns a view or data.
+
+4. **How do you map a URL to a controller method?**  
+   Use `@RequestMapping` (or `@GetMapping`, `@PostMapping`, etc.) annotations on controller methods.
+
+5. **What is the purpose of the `@RequestParam` annotation?**  
+   It binds HTTP request parameters to method arguments in a controller.
+
+6. **How do you handle form data in Spring MVC?**  
+   Use `@ModelAttribute` to bind form data to a model object.
+
+7. **What is the use of `@PathVariable`?**  
+   It binds URI template variables to method parameters.
+
+8. **How do you return JSON or XML from a controller?**  
+   Annotate the method with `@ResponseBody` or use `@RestController` on the class.
+
+9. **What is the difference between `@Controller` and `@RestController`?**  
+   `@RestController` combines `@Controller` and `@ResponseBody`, returning data directly instead of a view.
+
+10. **How do you handle exceptions in Spring MVC?**  
+    Use `@ExceptionHandler` in controllers or `@ControllerAdvice` for global exception handling.
+
+11. **What is a ViewResolver?**  
+    It maps logical view names returned by controllers to actual view resources.
+
+12. **How do you configure static resource handling in Spring MVC?**  
+    Use `WebMvcConfigurer` and override `addResourceHandlers()`.
+
+13. **What is the use of `@InitBinder`?**  
+    It customizes data binding for web request parameters.
+
+14. **How do you perform validation in Spring MVC?**  
+    Use JSR-303 annotations (like `@Valid`) and a `BindingResult` parameter.
+
+15. **What is the Model in Spring MVC?**  
+    The Model is a map-like structure for passing data from controllers to views.
+
+16. **How do you redirect to another URL in Spring MVC?**  
+    Return a string with the prefix `redirect:` from a controller method.
+
+17. **What is the use of `@SessionAttributes`?**  
+    It stores model attributes in the HTTP session between requests.
+
+18. **How do you upload files in Spring MVC?**  
+    Use `MultipartFile` as a method parameter and configure multipart resolver.
+
+19. **What is the HandlerMapping interface?**  
+    It maps incoming requests to handler objects (controllers).
+
+20. **How do you implement internationalization (i18n) in Spring MVC?**  
+    Use `MessageSource` and locale resolvers.
+
+21. **What is the use of `@RequestBody`?**  
+    It binds the HTTP request body to a method parameter.
+
+22. **How do you return a custom HTTP status code from a controller?**  
+    Use `ResponseEntity` or `@ResponseStatus`.
+
+23. **What is the HandlerInterceptor interface?**  
+    It allows pre- and post-processing of requests, similar to servlet filters.
+
+24. **How do you enable CORS in Spring MVC?**  
+    Use `@CrossOrigin` annotation or configure it globally.
+
+25. **What is the difference between `@ModelAttribute` and `@RequestBody`?**  
+    `@ModelAttribute` binds form data; `@RequestBody` binds the request body (e.g., JSON).
+
+26. **How do you access request and session attributes in a controller?**  
+    Use `HttpServletRequest`, `HttpSession`, or `@SessionAttribute`.
+
+27. **What is the use of `@ResponseStatus`?**  
+    It sets the HTTP status code for a controller method’s response.
+
+28. **How do you configure view technologies like Thymeleaf or JSP in Spring MVC?**  
+    Register the appropriate ViewResolver bean in the configuration.
+
+29. **What is the use of `@RequestMapping` at the class level?**  
+    It defines a base URL for all handler methods in the controller.
+
+30. **How do you test Spring MVC controllers?**  
+    Use `MockMvc` for unit and integration testing of controllers.
+
+---
 
 ## 🚀 How to Use
 
