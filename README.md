@@ -757,6 +757,8 @@ Whether you're a **beginner** or an **experienced developer**, this resource wil
 
 30. **How do you test Spring MVC controllers?**  
     Use `MockMvc` for unit and integration testing of controllers.
+31. **What is the purpose of `@ResponseBody`?**  
+    It indicates that the return value of a method should be written directly to the HTTP response body
 
 ---
 
