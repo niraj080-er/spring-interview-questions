@@ -421,6 +421,10 @@ Whether you're a **beginner** or an **experienced developer**, this resource wil
 70. **How do you integrate Spring Data JPA with other Spring projects like Spring Batch or Spring Integration?**  
     Inject repositories into batch jobs or integration flows for seamless data access.
 
+70. **How do you implement optimistic locking in JPA and what are the benefits?**  
+    Use `@Version` annotation to manage concurrent updates, preventing lost updates and ensuring data integrity.
+
+
 ---
 
 ## 🌱 Spring AOP Interview Questions & Answers
